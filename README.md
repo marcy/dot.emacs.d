@@ -1,2 +1,3 @@
-dot.emacs.d
+.emacs.d
 ===========
+.emacs.d です。
