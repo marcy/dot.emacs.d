@@ -15,8 +15,8 @@
 
 ;;; リージョンの色
 (transient-mark-mode t)                 ; リージョンに色
-(set-face-background 'region "SkyBlue")
-(set-face-foreground 'region "black")
+;(set-face-background 'region "SkyBlue")
+;(set-face-foreground 'region "black")
 
 ;;; 右端で折り返さない
 (setq truncate-lines nil)
@@ -74,20 +74,12 @@
 ;;;             frame
 ;;; ============================================================
 (when (eq window-system 'ns)
-  (setq default-frame-alist
-        (append
-          '(
-            (top . 25)     ;; position
-            (left . 60)
-            (width . 80)   ;; FrameSize
-            (height . 30)
-            )
-          default-frame-alist))
   ;; 透明に
-  (set-frame-parameter nil 'alpha '(90 75))
-  )
+  (set-frame-parameter nil 'alpha '(90 75)))
 
-;; replace-colorthemes
+;;; ============================================================
+;;;               replace-colorthemes
+;;; ============================================================
 ;; https://github.com/emacs-jp/replace-colorthemes
 (add-to-list 'custom-theme-load-path
              (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
