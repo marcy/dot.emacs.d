@@ -84,5 +84,5 @@
 (add-to-list 'custom-theme-load-path
              (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
 
-(load-theme 'tty-dark t t)
-(enable-theme 'tty-dark)
+(load-theme 'dark-laptop t t)
+(enable-theme 'dark-laptop)
