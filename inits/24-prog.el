@@ -76,8 +76,8 @@
   (end-of-line))
 
 ;; from http://d.hatena.ne.jp/akm/20080605#1212644489
-;(require 'ruby-mode)
-;(defun ruby-mode-set-encoding () ())
+(require 'ruby-mode)
+(defun ruby-mode-set-encoding () ())
 
 (autoload 'ruby-mode "ruby-mode"
   "Mode for editing ruby source files" t)
@@ -94,42 +94,36 @@
       (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
+
+(require 'ruby-end)
 (add-hook 'ruby-mode-hook
-          (lambda()
-            ;(inf-ruby-keys)
-            (require 'ruby-electric)
-            (ruby-electric-mode t)
-            (setq ruby-electric-newline-before-closing-bracket t)
-            )
-          (lambda()
-            (require 'ruby-block)
-            (ruby-block-mode t)
-            (setq ruby-block-highlight-toggle t)
-            )
-          )
+  '(lambda ()
+    (abbrev-mode 1)
+    (electric-pair-mode t)
+    (electric-indent-mode t)
+    (electric-layout-mode t)))
+
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
+(setq ruby-electric-expand-delimiters-list nil)
+
+;; ruby-block.el --- highlight matching block
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle t)
 
 ;; インデントをまともに
 (setq ruby-deep-indent-paren-style nil)
-
-;(defun ruby-mode-hook-init ()
-;  "encodingを自動挿入しないようにする"
-;  (remove-hook 'before-save-hook 'ruby-mode-set-encoding)
-;  (define-key ruby-mode-map "\C-ce" 'my-ruby-mode-set-encoding))
-
-(add-hook 'ruby-mode-hook 'ruby-mode-hook-init)
 
 (defun my-ruby-mode-set-encoding ()
   "set-encoding ruby-mode"
   (interactive)
   (ruby-mode-set-encoding))
-
-(require 'ruby-end)
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-             (abbrev-mode 1)
-             (electric-pair-mode t)
-             (electric-indent-mode t)
-             (electric-layout-mode t)))
+(defun ruby-mode-hook-init ()
+  "encodingを自動挿入しないようにする"
+  (remove-hook 'before-save-hook 'ruby-mode-set-encoding)
+  (define-key ruby-mode-map "\C-ce" 'my-ruby-mode-set-encoding))
+(add-hook 'ruby-mode-hook 'ruby-mode-hook-init)
 
 ;; シンボルをハイライト表示
 ;(require 'auto-highlight-symbol-config)
