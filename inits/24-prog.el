@@ -68,13 +68,6 @@
 ;;; ==================================================================
 ;;;             ruby
 ;;; ==================================================================
-(defun ruby-insert-end ()
-  "Insert \"end\" at point and reindent current line."
-  (interactive)
-  (insert "end")
-  (ruby-indent-line t)
-  (end-of-line))
-
 ;; from http://d.hatena.ne.jp/akm/20080605#1212644489
 (require 'ruby-mode)
 (defun ruby-mode-set-encoding () ())
@@ -88,6 +81,7 @@
        (list (cons "\\.racc$" 'ruby-mode))
        (list (cons "\\.jbuilder$" 'ruby-mode))
        (list (cons "Gemfile" 'ruby-mode))
+       (list (cons "Capfile" 'ruby-mode))
        (list (cons "Rakefile" 'ruby-mode))
        auto-mode-alist))
 (setq interpreter-mode-alist
@@ -95,6 +89,28 @@
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
 
+;; ruby-modeのインデントを改良する
+(setq ruby-deep-indent-paren-style nil)
+(defadvice ruby-indent-line (after unindent-closing-paren activate)
+  (let ((column (current-column))
+        indent offset)
+    (save-excursion
+      (back-to-indentation)
+      (let ((state (syntax-ppss)))
+        (setq offset (- column (current-column)))
+        (when (and (eq (char-after) ?\))
+                   (not (zerop (car state))))
+          (goto-char (cadr state))
+          (setq indent (current-indentation)))))
+    (when indent
+      (indent-line-to indent)
+      (when (> offset 0) (forward-char offset)))))
+
+;; --------------------------------------------------
+;; ruby-end
+;; endや括弧などを自動挿入する
+;; http://blog.livedoor.jp/ooboofo3/archives/53748087.html
+;; --------------------------------------------------
 (require 'ruby-end)
 (add-hook 'ruby-mode-hook
   '(lambda ()
@@ -103,27 +119,13 @@
     (electric-indent-mode t)
     (electric-layout-mode t)))
 
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
-(setq ruby-electric-expand-delimiters-list nil)
-
-;; ruby-block.el --- highlight matching block
+;; --------------------------------------------------
+;; ruby-block
+;; endにカーソルを合わせると、そのendに対応する行をハイライトする
+;; --------------------------------------------------
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle t)
-
-;; インデントをまともに
-(setq ruby-deep-indent-paren-style nil)
-
-(defun my-ruby-mode-set-encoding ()
-  "set-encoding ruby-mode"
-  (interactive)
-  (ruby-mode-set-encoding))
-(defun ruby-mode-hook-init ()
-  "encodingを自動挿入しないようにする"
-  (remove-hook 'before-save-hook 'ruby-mode-set-encoding)
-  (define-key ruby-mode-map "\C-ce" 'my-ruby-mode-set-encoding))
-(add-hook 'ruby-mode-hook 'ruby-mode-hook-init)
 
 ;; シンボルをハイライト表示
 ;(require 'auto-highlight-symbol-config)
