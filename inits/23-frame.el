@@ -40,8 +40,8 @@
 (when (eq window-system 'ns)
   (let ((my-font-height 120)
         (my-font (cond
-                  (nil   "Monaco")  ;; XCode 3.1 で使っているフォント
-                  (t "Menlo")       ;; XCode 3.2 で使ってるフォント
+                  (nil "Monaco")  ;; XCode 3.1 で使っているフォント
+                  (t "Menlo")     ;; XCode 3.2 で使ってるフォント
                   ))
         (my-font-ja "Hiragino Maru Gothic Pro"))
     (setq mac-allow-anti-aliasing t)
@@ -83,6 +83,5 @@
 ;; https://github.com/emacs-jp/replace-colorthemes
 (add-to-list 'custom-theme-load-path
              (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
-
 (load-theme 'dark-laptop t t)
 (enable-theme 'dark-laptop)
