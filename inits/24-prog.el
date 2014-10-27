@@ -133,7 +133,6 @@
 (setq highlight-symbol-colors '("DarkOrange" "DodgerBlue1" "DeepPink1"))
 
 (global-set-key (kbd "") 'highlight-symbol-at-point)
-;(global-set-key (kbd "M-") 'highlight-symbol-remove-all)
 
 ;; auto complete
 (when (require 'auto-complete nil t)
@@ -147,7 +146,6 @@
   (add-hook 'ruby-mode-hook
             (lambda ()
               (require 'rcodetools)
-              (require 'auto-complete-ruby)
               (make-local-variable 'ac-omni-completion-sources)
               (setq ac-omni-completion-sources '(("\\.\\=" . (ac-source-rcodetools)))))))
 
