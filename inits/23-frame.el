@@ -28,10 +28,10 @@
 (setq-default indent-tabs-mode nil)
 
 ;;; カレント行をハイライトする際の色
-(require 'highlight-current-line)
-(highlight-current-line-on t)
+;(require 'highlight-current-line)
+;(highlight-current-line-on t)
 ;; To customize the background color
-(set-face-background 'highlight-current-line-face "gray18")
+;(set-face-background 'highlight-current-line-face "gray18")
 
 ;;; ============================================================
 ;;;    Cocoa Emacsのフォントセットを定義
