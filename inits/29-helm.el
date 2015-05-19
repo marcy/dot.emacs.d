@@ -18,6 +18,8 @@
 
   (define-key global-map (kbd "C-x p")     'helm-ghq)
 
+  (define-key ctl-x-map (kbd "y") 'helm-bundle-show)
+
   ;; Disable helm in some functions
   (add-to-list 'helm-completing-read-handlers-alist '(find-alternate-file . nil))
 
