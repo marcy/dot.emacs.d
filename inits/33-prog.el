@@ -176,4 +176,6 @@ See URL `http://batsov.com/rubocop/'."
 (add-hook 'go-mode-hook
       '(lambda ()
          (setq tab-width 2)
+         (setq standard-indent 2)
+         (setq indent-tabs-mode nil)
          ))
