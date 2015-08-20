@@ -179,3 +179,9 @@ See URL `http://batsov.com/rubocop/'."
          (setq standard-indent 2)
          (setq indent-tabs-mode nil)
          ))
+
+;;; ==================================================================
+;;;              Elixir
+;;; ==================================================================
+(autoload 'elixir-mode
+  "elixir-mode" "Major mode for editing Elixir files." t)
