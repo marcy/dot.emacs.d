@@ -16,7 +16,7 @@
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
   (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 
-  (define-key global-map (kbd "C-x p")     'helm-ghq)
+  (define-key global-map (kbd "C-x p") 'helm-ghq)
 
   (define-key ctl-x-map (kbd "y") 'helm-bundle-show)
 
