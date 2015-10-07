@@ -143,11 +143,13 @@
 (setq ruby-block-highlight-toggle t)
 
 ;; シンボルをハイライト表示
-;(require 'auto-highlight-symbol-config)
-(require 'highlight-symbol)
+(require 'auto-highlight-symbol)
+;(require 'highlight-symbol)
 (setq highlight-symbol-colors '("DarkOrange" "DodgerBlue1" "DeepPink1"))
 
 (global-set-key (kbd "") 'highlight-symbol-at-point)
+
+(add-hook 'ruby-mode-hook 'auto-highlight-symbol-mode)
 
 ;; --------------------------------------------------
 ;;         rspec
