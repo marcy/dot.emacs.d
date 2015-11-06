@@ -13,6 +13,8 @@
 (setq show-paren-style 'parenthesis)
 (global-font-lock-mode t)               ; 字に色
 
+(smart-cursor-color-mode 1) ; 動的にカーソルの色を変える
+
 ;;; リージョンの色
 (transient-mark-mode t)                 ; リージョンに色
 ;(set-face-background 'region "SkyBlue")
