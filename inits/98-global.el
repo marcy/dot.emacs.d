@@ -16,6 +16,3 @@
 
 ;; emacs-server
 (global-set-key (kbd "C-x C-c") 'server-edit)
-
-(require 'sequential-command-config)
-(sequential-command-setup-keys)
