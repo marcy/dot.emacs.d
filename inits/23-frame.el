@@ -13,12 +13,8 @@
 (setq show-paren-style 'parenthesis)
 (global-font-lock-mode t)               ; 字に色
 
-;(smart-cursor-color-mode 1) ; 動的にカーソルの色を変える
-
 ;;; リージョンの色
 (transient-mark-mode t)                 ; リージョンに色
-;(set-face-background 'region "SkyBlue")
-;(set-face-foreground 'region "black")
 
 ;;; 右端で折り返さない
 (setq truncate-lines nil)
@@ -28,12 +24,6 @@
 
 ;;; タブではなくスペースを使う
 (setq-default indent-tabs-mode nil)
-
-;;; カレント行をハイライトする際の色
-;(require 'highlight-current-line)
-;(highlight-current-line-on t)
-;; To customize the background color
-;(set-face-background 'highlight-current-line-face "gray18")
 
 ;;; ============================================================
 ;;;    Cocoa Emacsのフォントセットを定義
@@ -73,7 +63,9 @@
 (load-theme 'dark-laptop t t)
 (enable-theme 'dark-laptop)
 
-;;; popwin
+;;; ============================================================
+;;;            popwin
+;;; ============================================================
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 
