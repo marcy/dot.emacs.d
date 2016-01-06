@@ -14,7 +14,7 @@
 (global-font-lock-mode t)               ; 字に色
 
 ;;; リージョンの色
-(transient-mark-mode t)                 ; リージョンに色
+(transient-mark-mode t)
 
 ;;; 右端で折り返さない
 (setq truncate-lines nil)
