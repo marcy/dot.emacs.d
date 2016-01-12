@@ -1,0 +1,2 @@
+(setq tags-table-list
+      '("~"))

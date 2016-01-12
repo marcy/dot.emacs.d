@@ -62,11 +62,3 @@
              (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
 (load-theme 'dark-laptop t t)
 (enable-theme 'dark-laptop)
-
-;;; ============================================================
-;;;            popwin
-;;; ============================================================
-(require 'popwin)
-(setq display-buffer-function 'popwin:display-buffer)
-
-(push '("*rspec-compilation*" :regexp t) popwin:special-display-config)
