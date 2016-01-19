@@ -62,3 +62,9 @@
              (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
 (load-theme 'dark-laptop t t)
 (enable-theme 'dark-laptop)
+
+;;; ============================================================
+;;;            nyan-mode
+;;; ============================================================
+(nyan-mode t)
+(nyan-start-animation)
