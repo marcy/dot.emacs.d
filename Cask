@@ -50,6 +50,7 @@
 (depends-on "sass-mode")
 (depends-on "scratch-ext")
 (depends-on "scss-mode")
+(depends-on "seq")
 (depends-on "sequential-command")
 (depends-on "smart-newline")
 (depends-on "undo-tree")
