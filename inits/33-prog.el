@@ -46,6 +46,25 @@
                         '("\\.markdown" . markdown-mode)
                         )))
 
+;; (custom-set-faces
+;;  '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 2.2))))
+;;  '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.7))))
+;;  '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.3))))
+;;  '(org-level-1 ((t (:inherit org-level-1 :height 1.5))))
+;;  '(org-level-2 ((t (:inherit org-level-2 :height 1.3))))
+;; )
+
+(custom-set-faces
+ '(markdown-header-delimiter-face ((t (:inherit org-mode-line-clock))))
+ '(markdown-header-face-1 ((t (:inherit outline-1 :weight bold))))
+ '(markdown-header-face-2 ((t (:inherit outline-2 :weight bold))))
+ '(markdown-header-face-3 ((t (:inherit outline-3 :weight bold))))
+ '(markdown-header-face-4 ((t (:inherit outline-4 :weight bold))))
+ '(markdown-header-face-5 ((t (:inherit outline-5 :weight bold))))
+ '(markdown-header-face-6 ((t (:inherit outline-6 :weight bold))))
+ '(markdown-pre-face ((t (:inherit org-formula))))
+ )
+
 ;;; ==================================================================
 ;;;             c
 ;;; ==================================================================
