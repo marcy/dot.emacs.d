@@ -28,7 +28,6 @@
 ;;; ============================================================
 ;;;    Cocoa Emacsのフォントセットを定義
 ;;; ============================================================
-;; Fonts
 (when (eq window-system 'ns)
   (create-fontset-from-ascii-font
    "Menlo-12:weight=normal:slant=normal"
