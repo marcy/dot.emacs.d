@@ -210,7 +210,6 @@ See URL `http://batsov.com/rubocop/'."
 (require 'go-mode)
 (add-hook 'before-save-hook 'gofmt-before-save)
 
-
 ;;; ==================================================================
 ;;;              Elixir
 ;;; ==================================================================
