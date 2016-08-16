@@ -1,6 +1,7 @@
 (source gnu)
 (source melpa)
 
+(depends-on "2048-game")
 (depends-on "ag")
 (depends-on "anzu")
 (depends-on "async")
@@ -25,6 +26,7 @@
 (depends-on "gitconfig-mode")
 (depends-on "github-browse-file")
 (depends-on "gitignore-mode")
+(depends-on "go-autocomplete")
 (depends-on "go-mode")
 (depends-on "haml-mode")
 (depends-on "haskell-mode")
@@ -66,5 +68,6 @@
 (depends-on "undo-tree")
 (depends-on "web-mode")
 (depends-on "wgrep-ag")
+(depends-on "with-editor")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
