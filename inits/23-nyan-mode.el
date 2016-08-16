@@ -1,2 +1,2 @@
-(nyan-mode t)
-(nyan-start-animation)
+;; (nyan-mode t)
+;; (nyan-start-animation)
