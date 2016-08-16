@@ -208,12 +208,8 @@ See URL `http://batsov.com/rubocop/'."
 ;;;                go
 ;;; ==================================================================
 (require 'go-mode)
-(add-hook 'go-mode-hook
-      '(lambda ()
-         (setq tab-width 2)
-         (setq standard-indent 2)
-         (setq indent-tabs-mode nil)
-         ))
+(add-hook 'before-save-hook 'gofmt-before-save)
+
 
 ;;; ==================================================================
 ;;;              Elixir
