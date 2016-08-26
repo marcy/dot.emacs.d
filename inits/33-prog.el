@@ -208,6 +208,11 @@ See URL `http://batsov.com/rubocop/'."
 ;;;                go
 ;;; ==================================================================
 (require 'go-mode)
+
+(add-hook 'go-mode-hook
+  '(lambda ()
+     (setq tab-width 2)))
+
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 ;;; ==================================================================
