@@ -16,3 +16,6 @@
 
 ;; emacs-server
 (global-set-key (kbd "C-x C-c") 'server-edit)
+
+;; yes or no
+(defalias 'yes-or-no-p 'y-or-n-p)
