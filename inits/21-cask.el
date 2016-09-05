@@ -1,4 +1,3 @@
-;(require 'cask "~/.cask/cask.el")
 (require 'cask "cask.el")
 (cask-initialize)
 (require 'pallet)

@@ -1,6 +1,4 @@
-;;; ==================================================================
-;;;  スクリプトを保存する時，自動的に chmod +x を行なうようにする
-;;; ==================================================================
+;;  スクリプトを保存する時，自動的に chmod +x を行なうようにする
 (defun make-file-executable ()
   "Make the file of this buffer executable, when it is a script source."
   (save-restriction

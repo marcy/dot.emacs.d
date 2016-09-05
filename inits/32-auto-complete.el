@@ -1,4 +1,3 @@
-;; auto complete
 (when (require 'auto-complete nil t)
   (global-auto-complete-mode t)
   (setq ac-dwim nil)
@@ -11,11 +10,10 @@
             (lambda ()
               (require 'rcodetools)
               (make-local-variable 'ac-omni-completion-sources)
-              (setq ac-omni-completion-sources '(("\\.\\=" . (ac-source-rcodetools)))))))
-
-(define-key ac-complete-mode-map "\C-n" 'ac-next)
-(define-key ac-complete-mode-map "\C-p" 'ac-previous)
-
-(require 'go-autocomplete)
-(require 'auto-complete-config)
-(ac-config-default)
+              (setq ac-omni-completion-sources '(("\\.\\=" . (ac-source-rcodetools))))))
+  (require 'go-autocomplete)
+  (require 'auto-complete-config)
+  (ac-config-default)
+  (define-key ac-complete-mode-map "\C-n" 'ac-next)
+  (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+  )
