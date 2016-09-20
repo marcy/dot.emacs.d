@@ -1,3 +1,9 @@
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 ;; ~/.emacs.d/site-lisp 以下全部読み込み
 (let ((default-directory (expand-file-name "~/.emacs.d/site-lisp")))
   (add-to-list 'load-path default-directory)
@@ -18,6 +24,10 @@
  '(anzu-mode-lighter "")
  '(anzu-search-threshold 1000)
  '(init-loader-show-log-after-init (quote error-only))
+ '(package-selected-packages
+   (quote
+    (yasnippet yaml-mode wgrep-ag web-mode undo-tree smart-newline sequential-command scss-mode scratch-ext ruby-end ruby-block rubocop rspec-mode rinari popwin pallet osx-dictionary open-junk-file multicolumn markdown-mode magit js2-mode init-loader howm helm-projectile helm-ls-git helm-ghq helm-bundle-show helm-ag-r helm-ag haskell-mode haml-mode go-mode go-autocomplete gitignore-mode github-browse-file gitconfig-mode git-gutter git-gutter+ gh flycheck fish-mode exec-path-from-shell elscreen elixir-mode dumb-jump dired+ color-moccur coffee-mode auto-highlight-symbol anzu ag 2048-game)))
+ '(ruby-insert-encoding-magic-comment nil)
  '(send-mail-function (quote smtpmail-send-it)))
 (init-loader-load "~/.emacs.d/inits")
 
