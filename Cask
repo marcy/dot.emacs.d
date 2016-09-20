@@ -1,4 +1,3 @@
-(source gnu)
 (source melpa)
 
 (depends-on "2048-game")
@@ -50,6 +49,7 @@
 (depends-on "open-junk-file")
 (depends-on "osx-dictionary")
 (depends-on "package-build")
+(depends-on "pallet")
 (depends-on "pcache")
 (depends-on "popup")
 (depends-on "popwin")
