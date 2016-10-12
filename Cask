@@ -9,6 +9,7 @@
 (depends-on "cask")
 (depends-on "coffee-mode")
 (depends-on "color-moccur")
+(depends-on "company-go")
 (depends-on "dash")
 (depends-on "dired+")
 (depends-on "dumb-jump")
