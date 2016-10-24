@@ -4,6 +4,7 @@
 (define-key global-map "\C-c;" 'comment-region)      ; コメントアウト
 (define-key global-map "\C-c:" 'uncomment-region)    ; コメント解除
 (define-key global-map "\C-c\C-u" 'universal-argument)
+(define-key global-map "\C-@" 'mark-word)
 
 ;; ファイル保存時に行末の空行消す
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
