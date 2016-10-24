@@ -39,6 +39,7 @@
 (depends-on "helm-ls-git")
 (depends-on "helm-projectile")
 (depends-on "howm")
+(depends-on "ht")
 (depends-on "init-loader")
 (depends-on "js2-mode")
 (depends-on "magit")
