@@ -65,7 +65,6 @@
 (depends-on "seq")
 (depends-on "sequential-command")
 (depends-on "smart-newline")
-(depends-on "undo-tree")
 (depends-on "web-mode")
 (depends-on "wgrep-ag")
 (depends-on "with-editor")
