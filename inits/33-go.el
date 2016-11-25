@@ -2,6 +2,8 @@
 (require 'company)
 (require 'company-go)
 
+(setq gofmt-command "goimports")
+
 (add-hook 'go-mode-hook 'company-mode)
 (add-hook 'go-mode-hook 'flycheck-mode)
 (add-hook 'go-mode-hook (lambda()
