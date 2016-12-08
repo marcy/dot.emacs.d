@@ -1,6 +1,13 @@
+(load "sense-expand-region")
+
+(progn
+  (bind-key "\C-ch" 'help-for-help)
+  (bind-key "C-x C-c" 'server-edit)
+  (bind-key "C-=" 'sense-expand-region)
+  (bind-key* "\C-h" 'delete-backward-char)
+ )
+
 ;;; keybind
-(define-key global-map "\C-h" 'delete-backward-char) ; C-h で BS
-(global-set-key "\C-ch" 'help-for-help)              ; C-ch でヘルプ
 (define-key global-map "\C-c;" 'comment-region)      ; コメントアウト
 (define-key global-map "\C-c:" 'uncomment-region)    ; コメント解除
 (define-key global-map "\C-c\C-u" 'universal-argument)
@@ -14,9 +21,6 @@
 
 ;; バッファ自動再読み込み
 (global-auto-revert-mode 1)
-
-;; emacs-server
-(global-set-key (kbd "C-x C-c") 'server-edit)
 
 ;; yes or no
 (defalias 'yes-or-no-p 'y-or-n-p)
