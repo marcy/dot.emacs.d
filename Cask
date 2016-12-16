@@ -41,6 +41,7 @@
 (depends-on "helm-ghq")
 (depends-on "helm-ls-git")
 (depends-on "helm-projectile")
+(depends-on "highlight-symbol")
 (depends-on "howm")
 (depends-on "ht")
 (depends-on "init-loader")
