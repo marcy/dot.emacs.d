@@ -53,11 +53,6 @@
   ;; 透明に
   (set-frame-parameter nil 'alpha '(90 75)))
 
-;;; ============================================================
-;;;               replace-colorthemes
-;;; ============================================================
-;; https://github.com/emacs-jp/replace-colorthemes
-(add-to-list 'custom-theme-load-path
-             (file-name-as-directory "~/.emacs.d/replace-colorthemes"))
+;; color-theme-modern
 (load-theme 'dark-laptop t t)
 (enable-theme 'dark-laptop)
