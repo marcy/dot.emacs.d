@@ -15,3 +15,9 @@ See URL `http://batsov.com/rubocop/'."
           (file-name) ":" line ":" column ": " (or "E" "F") ": " (message)
           line-end))
   :modes (enh-ruby-mode motion-mode))
+
+; for python
+(require 'python)
+(defun tnoda/turn-on-flycheck-mode ()
+  (flycheck-mode 1))
+(add-hook 'python-mode-hook 'tnoda/turn-on-flycheck-mode)
