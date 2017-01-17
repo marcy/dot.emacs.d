@@ -1,8 +1,6 @@
 .cask
-_trash
 ac-comphist.dat
 auto-save-list
-elpa
 kill-ring-saved.el
 recentf
 site-lisp
