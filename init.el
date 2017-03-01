@@ -10,6 +10,11 @@
   (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
       (normal-top-level-add-subdirs-to-load-path)))
 
+;; インストールされたパッケージが package-selected-package 変数に保持されるのを抑制する
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
 ;; init loader
 (require 'init-loader)
 (custom-set-variables
@@ -27,10 +32,6 @@
    (quote
     ("5d3e0746023fc5e246eb3e0e48c1ccb5ce0387fc4273896c6cf02ee349c2eba8" default)))
  '(init-loader-show-log-after-init (quote error-only))
- '(package-selected-packages
-   (quote
-    (color-theme-modern elpy py-autopep8 highlight-symbol mark-multiple expand-region bind-key company-go dash yasnippet yaml-mode wgrep-ag web-mode smart-newline sequential-command scss-mode scratch-ext ruby-end ruby-block rubocop rspec-mode rinari popwin pallet osx-dictionary open-junk-file multicolumn markdown-mode magit js2-mode init-loader howm helm-projectile helm-ls-git helm-ghq helm-bundle-show helm-ag-r helm-ag haskell-mode haml-mode go-autocomplete gitignore-mode github-browse-file gitconfig-mode git-gutter git-gutter+ gh flycheck fish-mode exec-path-from-shell elscreen elixir-mode dumb-jump dired+ color-moccur coffee-mode auto-highlight-symbol anzu ag 2048-game)))
- '(ruby-insert-encoding-magic-comment nil)
  '(send-mail-function (quote smtpmail-send-it)))
 (init-loader-load "~/.emacs.d/inits")
 

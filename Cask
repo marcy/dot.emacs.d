@@ -64,6 +64,7 @@
 (depends-on "popwin")
 (depends-on "projectile")
 (depends-on "py-autopep8")
+(depends-on "pyvenv")
 (depends-on "rspec-mode")
 (depends-on "rubocop")
 (depends-on "ruby-block")
