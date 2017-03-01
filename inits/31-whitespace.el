@@ -24,7 +24,7 @@
                     :foreground "DeepPink"
                     :underline t)
 (set-face-attribute 'whitespace-tab nil
-                    :foreground "LightSkyBlue"
+                    :foreground "labelColor"
                     :underline t)
 (set-face-attribute 'whitespace-space nil
                     :foreground "GreenYellow"
