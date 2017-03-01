@@ -5,6 +5,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.howm$" . markdown-mode))
 
+(setq howm-directory "~/Dropbox/howm/")
 (setq howm-menu-recent-num 50)
 
 ;; 済み(.)は表示しないように
